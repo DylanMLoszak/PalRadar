@@ -139,6 +139,19 @@ The version you are running is shown when you hover the tray icon.
 | No update prompt | You are on the latest version, or GitHub could not be reached; PalRadar tries again on the next start. |
 | Something else | `hud.log` next to the exe says what PalRadar was doing when it went wrong. |
 
+For anything that is not obvious, run the diagnostics script. Download
+[Diagnose-PalRadar.ps1](https://github.com/DylanMLoszak/PalRadar/raw/main/Diagnose-PalRadar.ps1) into the folder that
+holds `PalRadar.exe`, start the game if the problem happens in game, then in that folder run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Diagnose-PalRadar.ps1
+```
+
+It checks the display, the game window mode, the installed mod and where it writes, the feed files, the overlay's
+frame times and the game's own mod cost from the logs, and the installed voices, and it marks anything that looks
+wrong with `!!`. It writes `PalRadar-diagnostics.txt` next to itself. The file names your PC, folders and player, so
+read it before you send it to anyone.
+
 ## Uninstalling
 
 Next to the exe, delete `PalRadar.exe` itself, its `data` folder, `hud.log` and, if an update left it, `PalRadar.exe.old`.
